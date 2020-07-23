@@ -1,5 +1,5 @@
 #include "../Inc/timer.h"
-#include "avr/io.h"
+
 #include "../../../Infrastructure/Inc/types.h"
 
 #define PRESCALER_1024			1024
