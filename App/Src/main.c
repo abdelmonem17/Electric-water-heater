@@ -13,7 +13,7 @@ int main(void)
 	systemInit();
 	INT_GLOBAL_FLAG_ENABLE();
 	Sos_Run();
-	return 1;
+	return OK;
 
 
 }
