@@ -130,7 +130,7 @@ void systemInit(void)
 
 
 	/*check the stored set temp and accordingly can check if first time to use EEPROM or not*/
-	if( (au8_RequiredTemp > 75) || (au8_RequiredTemp < 35) )
+	if( (au8_RequiredTemp > TEMP_MAX ) || (au8_RequiredTemp < TEMP_MIN ) )
 	{
 		gsu8_RequiredTemp = TEMP_CURRENT_INIT;
 	}
