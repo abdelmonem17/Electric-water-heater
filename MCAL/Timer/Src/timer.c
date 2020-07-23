@@ -113,7 +113,6 @@ uint8 Timer_Init(Timer_cfg_S * timer_cgf)
 			if (timer_cgf->interrupt == INTERRUPT)
 			{
 				INT_TIMER0_OC_ENABLE();
-				INT_GLOBAL_FLAG_ENABLE();
 			}
 			else
 			{
