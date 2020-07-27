@@ -71,7 +71,7 @@ static uint16 gsu16_EEPROMTaskId;
 
 
 
-#ifdef INTERRUPT
+#ifdef BTN_ON_OFF_INTERRUPT
 void BtnOnOff_CallBack(void)
 {
 
@@ -87,8 +87,6 @@ void BtnOnOff_CallBack(void)
 	default :
 		break;
 	}
-
-
 
 }
 #endif
