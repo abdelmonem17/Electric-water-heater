@@ -1,5 +1,4 @@
 #include "../Inc/timer.h"
-
 #include "../../../Infrastructure/Inc/types.h"
 
 #define PRESCALER_1024			1024
@@ -113,6 +112,7 @@ uint8 Timer_Init(Timer_cfg_S * timer_cgf)
 			if (timer_cgf->interrupt == INTERRUPT)
 			{
 				INT_TIMER0_OC_ENABLE();
+
 			}
 			else
 			{

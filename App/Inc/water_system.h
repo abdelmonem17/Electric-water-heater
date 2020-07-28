@@ -1,5 +1,5 @@
-#ifndef __WATER_SYSTEM_H__
-#define __WATER_SYSTEM_H__
+#ifndef __MYSYSTEM_H__
+#define __MYSYSTEM_H__
 
 
 /****************************************************************************
@@ -9,7 +9,6 @@
  *   @return  void
  ****************************************************************************/
 void systemInit(void);
-
 
 
 #endif
