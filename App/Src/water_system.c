@@ -93,6 +93,73 @@ void BtnOnOff_CallBack(void)
 
 
 
+/****************************************************************************
+ *
+ *   @brief function acts as task and polls the status of the ON/OFF display button
+ *   @params  void
+ *
+ *
+ *   @return  void
+ ****************************************************************************/
+ static void btnOnOffMonitoring_Task(void);
+
+
+
+
+
+/****************************************************************************
+ *
+ *   @brief function polls up and down buttons to set temperture
+ *   @params  void
+ *
+ *
+ *   @return  void
+ ****************************************************************************/
+static void btnsUpDownMonitoring_Task(void);
+
+
+/****************************************************************************
+ *
+ *   @brief function checks cooling and heating status and accordingly turn the heater
+ *    or cooler on or off
+ *   @params  void
+ *
+ *
+ *   @return  void
+ ****************************************************************************/
+static void btnOnOffMonitoring_Task(void);
+
+/****************************************************************************
+ *
+ *   @brief function acts as function polls the state of current temperature
+ *   comparing to required one
+ *   @params  void
+ *
+ *   @return  void
+ ****************************************************************************/
+static void tempertureMonitoring_Task(void);
+
+
+/****************************************************************************
+ *
+ *   @brief function acts as a task and polls the status of seven segements
+ *   @params  void
+ *
+ *
+ *   @return  void
+ ****************************************************************************/
+static void SevenSegmentDisplay_Task(void);
+
+/****************************************************************************
+ *
+ *   @brief function acts as a task and polls the eeprom to write on it
+ *   @params  void
+ *
+ *
+ *   @return  void
+ ****************************************************************************/
+static void EEPROM_Task(void);
+
 
 /****************************************************************************
  *
@@ -160,7 +227,7 @@ void systemInit(void)
  *
  *   @return  void
  ****************************************************************************/
-void btnOnOffMonitoring_Task(void)
+static void btnOnOffMonitoring_Task(void)
 {
 	static BtnPoweringStatus_enm  sBtnPoweringStatusEnm_status= BTN_GROUNDED;
 
@@ -205,7 +272,7 @@ void btnOnOffMonitoring_Task(void)
  *
  *   @return  void
  ****************************************************************************/
-void btnsUpDownMonitoring_Task(void)
+static void btnsUpDownMonitoring_Task(void)
 {
 
 
@@ -358,7 +425,7 @@ static inline  void __attribute__((always_inline)) CoolingHeatingMonitoring(void
  *
  *   @return  void
  ****************************************************************************/
-void tempertureMonitoring_Task(void)
+static void tempertureMonitoring_Task(void)
 {
 	static uint16 su16_TempAvg = 0;
 	static uint8 su8_TempCounter = 0;
@@ -447,7 +514,7 @@ void tempertureMonitoring_Task(void)
  *
  *   @return  void
  ****************************************************************************/
-void SevenSegmentDisplay_Task(void)
+static void SevenSegmentDisplay_Task(void)
 {
 
 	static SevenSegmentType_t sSevenSegementTypeEnm_Display = SEVEN_SEGMENT_OFF;
@@ -598,7 +665,7 @@ void SevenSegmentDisplay_Task(void)
  *
  *   @return  void
  ****************************************************************************/
-void EEPROM_Task(void)
+static void EEPROM_Task(void)
 {
 
 	if (EEPROM_write(EEPROM_SLAVE_ADDRESS,EEPROM_TEMP_LOCATION,gsu8_RequiredTemp) == EEPROM_WRITING_COMPETED)
