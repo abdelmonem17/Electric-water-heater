@@ -8,16 +8,13 @@
  ****************************************************************************/
 
 #include "../Inc/Sos.h"
+#include "../Inc/Sos_Cfg.h"
 #include "../../../MCAL/Timer/Inc/timer.h"
 #include "../../../Infrastructure/Inc/mega32_registers.h"
 #include "../../../MCAL/Internal/Inc/internal_peripherals.h"
 
 
 /*- LOCAL MACROS ------------------------------------------*/
-#define MAX_TASKS_COUNTS		100
-
-/*- LOCAL FUNCTIONS PROTOTYPES ----------------------------*/
-
 
 #define STATE_DORMANT			0
 #define	STATE_NOTDORMANT		1
